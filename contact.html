@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkHub: Contact Info</title>
+  <link rel="icon" href="images/favicon-1.png" >
+  <style>
+
+    *{
+      box-sizing: border-box;
+    }
+
+    header {
+      background: linear-gradient(135deg, #D4A017, #228B22); /* Diagonal gradient background */
+      color: white; /* Header text color */
+      padding: 0.9375rem; /* 15px converted to rem (15 ÷ 16 = 0.9375) */
+      position:sticky; /* Sticks to viewport when scrolling */
+      top: 0; /* Sticks at the very top */
+      z-index: 1000; /* Keeps header above overlapping content */
+  }
+
+  .nav-container {
+      max-width: 100%; /* Restricts width */
+      min-width: 100%;
+      margin: auto; /* Centers horizontally */
+      padding:0 1.25rem;/*20px converted to rem (20 ÷ 16 = 1.25 )*/
+      display: flex; /* Flexbox layout */
+      justify-content: space-between; /* Logo left, nav right */
+      align-items: center; /* Vertical centering */
+  }
+
+  .logo img {
+      max-width: 250px;
+  }
+
+  nav ul {
+      display: flex; /* Horizontal list */
+      list-style: none; /* Removes bullets */
+      gap: 1.5625rem; /* 25px converted to rem (25 ÷ 16 = 1.5625) */
+  }
+
+  nav ul li a {
+      color: white; /* Link text color */
+      text-decoration: none; /* Removes underline */
+      font-weight: 500; /* Slightly bold text */
+      padding-inline: 1.25rem; /* 20px converted to rem (20 ÷ 16 = 1.25) */
+      padding-block: 0.625rem; /* 10px converted to rem (10 ÷ 16 = 0.625) */
+      border-radius: 20px; /* Rounded corners */
+      transition: all 0.3s ease;
+  }
+
+  nav ul li a:hover {
+      background-color: #D4A017; /* Gold background on hover */
+  }   
+
+
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets default font family for the page */
+    color: #333;
+    min-width: 1200px;
+
+
+  }
+  .overlay {
+    padding: 0;
+    height:100vh;
+    display: flex;
+    background-image: url("images/images.jpg");
+    background-size: cover;
+
+
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin-inline: auto;
+    margin-block: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    background: rgba(225,225,225,0.5);
+  }
+
+  .text-div{
+    margin-top: 0;
+    width: 300px;
+    margin-left: 0;
+    line-height: 1.8;
+  }
+  .logo-div{
+    max-width:400px;
+    margin-bottom: 0;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  .logo{
+    width: 100%;
+  }
+
+  h1 {
+
+    margin-block: 10px;
+    color: #006699;
+  }
+  p {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  .buttons {
+    width: auto;
+    margin-top: 0;
+
+  }
+  .btn-call,.btn-email {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn-email {
+    background-color: #006699;
+    color: #fff;
+  }
+  .btn-email:hover {
+    background-color: #004466;
+  }
+  .btn-call {
+    background-color: #ff6600;
+    color: #fff;
+  }
+  .btn-call:hover {
+    background-color: #cc5200;
+  }
+
+  .copyright{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+  }
+
+  </style>
+</head>
+
+
+
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/nav-logo.png" >
+      </div>
+      <nav>
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="assn.html">Ticketing</a></li>
+            <li><a href="contact.html" style = "background-color:#D4A017";>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <div class="overlay">
+    <div class="card">
+      <div class = "logo-div">
+        <img src="images/logo.png" alt="LINKHUB Logo" class="logo">
+      </div>
+      <div class="text-div">
+        <h1><b>Contact Us</b></h1>
+        <p><strong><i>Company Name:</i></strong> LinkHub</p>
+        <p><strong><i>Address:</i></strong> Adenta , Accra, Ghana</p>
+        <p><strong><i>Phone:</i></strong> +233 245-931-278</p>
+        <p><strong><i>Email:</i></strong> linkhub@gmail.com</p>
+      </div>  
+      <div class="buttons">
+        <a href="mailto:linkhub@gmail.com" class="btn-email">📧 Email Us</a>
+        <a href="tel:+233245931278" class="btn-call">📞 Call Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p style="font-size:14px; color:#aaa;">© 2026 LinkHub. All rights reserved.</p>
+  </div>
+</body>
+</html>

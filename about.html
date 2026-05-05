@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon-1.png" >
+    <title>LinkHub: About</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets default font family for the page */
+            color: #333; /* Dark gray text color */
+            margin: 0; /* Removes default browser margin */
+            min-width: 1200px;
+        }
+        /*Navigation*/
+        header {
+            background: linear-gradient(135deg, #D4A017, #228B22); /* Diagonal gradient background */
+            color: white; /* Header text color */
+            padding: 0.9375rem; /* 15px converted to rem (15 ÷ 16 = 0.9375) */
+            position:sticky; /* Sticks to viewport when scrolling */
+            top: 0; /* Sticks at the very top */
+            z-index: 1000; /* Keeps header above overlapping content */
+        }
+
+        .nav-container {
+            max-width: 100%; /* Restricts width */
+            min-width: 100%;
+            margin: auto; /* Centers horizontally */
+            padding:0 1.25rem;/*20px converted to rem (20 ÷ 16 = 1.25 )*/
+            display: flex; /* Flexbox layout */
+            justify-content: space-between; /* Logo left, nav right */
+            align-items: center; /* Vertical centering */
+        }
+
+        .logo img {
+            max-width: 250px;
+        }
+
+        nav ul {
+            display: flex; /* Horizontal list */
+            list-style: none; /* Removes bullets */
+            gap: 1.5625rem; /* 25px converted to rem (25 ÷ 16 = 1.5625) */
+        }
+
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none; /* Removes underline */
+            font-weight: 500; /* Slightly bold text */
+            padding-inline: 1.25rem; /* 20px converted to rem (20 ÷ 16 = 1.25) */
+            padding-block: 0.625rem; /* 10px converted to rem (10 ÷ 16 = 0.625) */
+            border-radius: 20px; /* Rounded corners */
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #D4A017; /* Gold background on hover */
+        }
+
+        /*About*/
+        .mission {
+            background-image:url(images/background-img-4.jpg); /* Sets background image */
+            background-position: center; /* Centers image */
+            color: beige; /* White text */
+            text-align: center; /* Centered text */
+            padding: 160px 100px; /* Large vertical spacing, small horizontal spacing */
+            font-size: 18px;
+        }
+        
+
+        .container {
+            width:100%; /* Restricts width */
+            max-height:700px ;
+            margin: 0 auto; /* Centers container horizontally */   
+        }
+
+        h2 {
+            text-align: center; /* Centered heading */
+            font-size: 2.5rem; /* Large heading size */
+            margin-bottom: 50px; /* Space below heading */
+            color:white; /* Green text */
+        }
+
+        .trust{
+            height:auto;
+            margin-block:100px; /*sets margin top and margin bottom to 100px*/
+        }
+
+        .trust p{
+            text-align: center;
+            color: rgb(90, 89, 89);
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .trust hr{
+            width:25px;
+            border:  solid 1px red ;
+        }
+
+        .trust div img{
+            width: auto;
+            height: 50px;
+            margin:30px 20px;
+
+        }
+
+        section{
+            display:flex;
+            justify-content:center;
+        }
+
+        .more{
+            background-color: #222222;
+            width:100%;
+            height:auto;
+            padding-block: 40px; /*sets margin top and margin bottom to 100px*/
+        }
+
+        .more div{
+            display :flex;
+            justify-content:center;
+        }
+        .more h2{
+            font-weight: 400;
+            margin-bottom: 0;
+            margin-inline: 30px;
+            color:#228B22 ;
+        }
+
+        .more hr{
+            width:35px;
+            border:  solid 1px red;
+        }
+        
+        .more div h2 span{
+            font-size: 17px;
+            display:flex;
+            margin: 0;
+
+        }
+        .more button{
+            margin-top:60px;
+            margin-inline: auto;
+            padding: 15px 20px;
+            border: solid 1px #228B22;
+            background-color:#222222 ;
+            color: #228B22;
+            display: block;
+        }
+
+        .copyright{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+        }
+
+
+        
+    </style>
+    
+</head>
+
+
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/nav-logo.png" >
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" ;>Home</a></li>
+                    <li><a href="about.html" style = "background-color:#D4A017">About</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="assn.html">Ticketing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+
+
+    <section class="mission">
+        <div class="container">
+            <h2>About LinkHub</h2>
+            <p>
+                LinkHub is a modern event management and ticketing platform designed to make organizing 
+                and attending events easier and more efficient. It provides users with a centralized space 
+                to discover events, purchase tickets, and stay updated on upcoming activities.
+                <br>
+                Our goal is to simplify the connection between event organizers and attendees by offering 
+                a user-friendly interface and reliable services. Whether it's concerts, conferences, or 
+                social gatherings, LinkHub ensures a smooth experience for everyone.
+                
+            </p>
+        </div>
+    </section>
+
+    <div class = "trust">
+        <p>BRANDS THAT TRUST US</p>
+        <hr>
+        <section>
+            <div>
+                <img src = "images/brands/amazon.png" alt = "amazon logo">
+            </div>
+            <div>
+                <img src = "images/brands/meta.png" alt = "meta logo">
+            </div>
+            <div>
+                <img src = "images/brands/netflix.png" alt = "netflix logo">
+            </div>
+            <div>
+                <img src = "images/brands/mtn.png" alt = "mtn logo">
+            </div>
+            <div>
+                <img src = "images/brands/google.png" alt = "google logo">
+            </div>
+        </section>
+    </div>
+
+    <div class = "more">
+        <h2>
+            Celebrate Connect
+        </h2>
+        <hr>
+        <div>
+            <h2>150M+<span>Clients Worldwide</span></h2>
+            <h2>150+<span>Countries Served</span></h2>
+            <h2>25K+<span>Employees Worldwide</span></h2>
+            <h2>30+<span>Years in Business</span></h2>
+        </div>
+        <button>
+            MORE ABOUT LINKHUB &nbsp<span>></span>
+        </button>
+
+    </div>
+    <div class = "copyright">
+        <p style="font-size:14px; color:#aaa;">© 2026 LinkHub. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

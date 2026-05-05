@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200px,initial-scale=1.0">
+    <link rel="icon" href="images/favicon-1.png" >
+    <title>LinkHub - Celebrate Connect</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets default font family for the page */
+            color: #333; /* Dark gray text color */
+            margin: 0; /* Removes default browser margin */
+            min-width: 1200px;
+
+
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #D4A017, #006699); /* Diagonal gradient background */
+            color: white; /* Header text color */
+            padding: 0.9375rem; /* 15px converted to rem (15 ÷ 16 = 0.9375) */
+            position:sticky; /* Sticks to viewport when scrolling */
+            top: 0; /* Sticks at the very top */
+            z-index: 1000; /* Keeps header above overlapping content */
+        }
+
+        .nav-container {
+            max-width: 100%; /* Restricts width */
+            min-width: 100%;
+            margin: auto; /* Centers horizontally */
+            padding:0 1.25rem;/*20px converted to rem (20 ÷ 16 = 1.25 )*/
+            display: flex; /* Flexbox layout */
+            justify-content: space-between; /* Logo left, nav right */
+            align-items: center; /* Vertical centering */
+        }
+
+        .logo img {
+            max-width: 250px;
+        }
+
+        nav ul {
+            display: flex; /* Horizontal list */
+            list-style: none; /* Removes bullets */
+            gap: 1.5625rem; /* 25px converted to rem (25 ÷ 16 = 1.5625) */
+        }
+
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none; /* Removes underline */
+            font-weight: 500; /* Slightly bold text */
+            padding-inline: 1.25rem; /* 20px converted to rem (20 ÷ 16 = 1.25) */
+            padding-block: 0.625rem; /* 10px converted to rem (10 ÷ 16 = 0.625) */
+            border-radius: 20px; /* Rounded corners */
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #D4A017; /* Gold background on hover */
+        }   
+            
+        /* Hero Section */
+        .hero {
+            background-image:url(images/background-img-1.jpg); /* Sets background image */
+            background-size: cover; /* Scales image to cover entire section */
+            background-position: center; /* Centers image */
+            color: white; /* White text */
+            text-align: center; /* Centered text */
+        }
+
+        .hero h1 {
+            font-size: 3.5rem; /* Very large heading */
+            margin-bottom: 10px; /* Space below heading */
+        }
+
+        .hero .tagline {
+            font-size: 1.6rem; /* Medium-large text */
+            margin-bottom: 30px; /* Space below tagline */
+            font-weight: 300; /* Light font weight */
+        }
+
+        .btn {
+            display: inline-block; /* Allows block styling but inline placement */
+            background: #D4A017; /* Gold background */
+            color: white; /* White text */
+            padding: 14px 32px; /* Inner spacing */
+            border-radius: 50px; /* Pill-shaped button */
+            text-decoration: none; /* Removes underline */
+            font-weight: bold; /* Bold text */
+            margin-top: 20px; /* Space above button */
+            transition: 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .btn:hover {
+            background: #228B22; /* Green background on hover */
+            transform: scale(1.05); /* Slightly enlarges button */
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px; /* Large vertical spacing, small horizontal spacing */
+        }
+
+        .container {
+            max-width: 1200px; /* Restricts width */
+            margin: 0 auto; /* Centers container horizontally */   
+        }
+
+        .mission{
+            line-height: 1.6; /* Controls vertical spacing between lines of text */
+            background-color: beige;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .mission:hover{
+            background-color: #333;
+            color:white;
+        }
+        h2 {
+            text-align: center; /* Centered heading */
+            font-size: 2.5rem; /* Large heading size */
+            margin-bottom: 50px; /* Space below heading */
+            color: #228B22; /* Green text */
+        }
+
+        /* Featured Events */
+        .events-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+        }
+        .event-card { 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+        }
+        .event-card img {
+             width: 100%; 
+             height: 200px; 
+             object-fit: cover; 
+            }
+        .event-info {
+             padding: 20px; 
+            }
+
+        /* Services */
+        .services-grid {
+            display: grid; /* Grid layout */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns: minimum 280px, expand to fill */
+            gap: 25px; /* Space between grid items */
+        }
+
+        .service-card {
+            background: white; /* White card background */
+            border-radius: 12px; /* Rounded corners */
+            padding: 30px 20px; /* Inner spacing */
+            text-align: center; /* Centered text */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
+        }
+
+        /* Location */
+        .location {
+            background: #f8f9fa; /* Light gray background */
+            text-align: center; /* Centered text */
+        }
+
+        .copyright{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+        <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/nav-logo.png" >
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style = "background-color:#D4A017";>Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="assn.html">Ticketing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>LINKHUB</h1>
+            <p class="tagline">Celebrate • Connect • Create Memories</p>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">
+                Connecting you to trusted and authentic event planners in Ghana for weddings, funerals, 
+                conferences, parties and more.
+            </p>
+            <a href="#" class="btn">Find Your Planner Now</a>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class = "mission">
+        <div class="container">
+            <h2>&#10024 Mission Statement</h2>
+            <p style="text-align: left; max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+                At LinkHub, we believe every event is more than a gathering it is a story waiting to be told. Our mission is to transform ideas into unforgettable experiences that inspire, connect, and leave lasting impressions. From intimate celebrations to large-scale international conferences, we blend creativity, precision, and innovation to craft moments that matter.
+                <br>
+                With a team of dedicated professionals, we handle every detail from venue selection and ticketing to branding, entertainment, and guest experience. Our approach is rooted in collaboration, ensuring that each event reflects the unique vision of our clients while exceeding expectations.
+                <br>
+                Over the years, we’ve built a reputation for excellence, managing events that bring together thousands of attendees, industry leaders, and creative minds. Whether it’s a corporate gala, cultural festival, or private tribute, we deliver with elegance, efficiency, and passion.
+                <br>
+                At LinkHub, we don’t just manage events we create environments where connections flourish, ideas spark, and memories are made to last a lifetime
+        </div>
+    </section>
+
+    <!-- Sample Events -->
+  <section style="padding: 80px 20px;">
+    <div class="container">
+      <h2>Sample Events</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <img src="event-pics/sample1.jpg" alt="Wedding">
+          <div class="event-info">
+            <h3>Beautiful Garden Wedding</h3>
+            <p><strong>Date:</strong> 15th May 2026</p>
+            <p><strong>Location:</strong> East Legon, Accra</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="event-pics/sample2.jpg" alt="Conference">
+          <div class="event-info">
+            <h3>Tech Summit Ghana 2026</h3>
+            <p><strong>Date:</strong> 10th June 2026</p>
+            <p><strong>Location:</strong> Accra International Conference Centre</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="event-pics/sample3.jpg" alt="Celebration">
+          <div class="event-info">
+            <h3>Grand Naming Ceremony</h3>
+            <p><strong>Date:</strong> 28th April 2026</p>
+            <p><strong>Location:</strong> Adenta, Accra</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Services -->
+    <section style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💍 Weddings</h3>
+                    <p>Traditional & modern weddings with experienced planners</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚰️ Funerals & Memorials</h3>
+                    <p>Dignified and respectful planning support</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎤 Conferences & Corporate</h3>
+                    <p>Professional event management for businesses</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎉 Parties & Social Events</h3>
+                    <p>Birthdays, naming ceremonies, engagements & more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color:#222222; color:#fff; padding:30px 0; text-align:center;">
+        <div class="footer-container" style="max-width:1200px; margin:0 auto;">
+
+            <!-- Logo / Brand -->
+            <h2 style="margin-bottom:10px; text-align: left;">LinkHub</h2>
+            <p style="margin-bottom:20px; text-align: left;">Celebrate Connect</p>
+
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">
+                📍 Adenta, Accra - Ghana
+            </p>
+            <p>We proudly serve clients across Greater Accra and beyond.</p>
+            <p style="margin-bottom:20px;">✉️ info@linkhub.com | ☎️ +233 123 456 789</p>
+            <!-- Copyright -->
+             
+            
+        </div>
+    </footer>
+
+    <div class = "copyright">
+        <p style="font-size:14px; color:#aaa;">© 2026 LinkHub. All rights reserved.</p>
+    </div>
+</body>
+</html>

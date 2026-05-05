@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="images/favicon-1.png" >
+  <title>LinkHub Company Portal</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --success:#10b981;
+      --danger:#ef4444;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071022 0%, #071827 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+    }
+    header{
+      grid-column:1/-1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:8px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#021024;
+      font-size:20px;
+      box-shadow:0 6px 18px rgba(6,182,212,0.12);
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    main{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 6px 30px rgba(2,6,23,0.6);
+    }
+    aside{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      height:fit-content;
+      position:sticky;
+      top:24px;
+    }
+    section{margin-bottom:18px}
+    h2{font-size:16px;margin:0 0 12px 0}
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea,select,button{
+      width:100%;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      background:var(--glass);
+      color:inherit;
+      font-size:14px;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .muted{color:var(--muted);font-size:13px}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#7c3aed);
+      color:#021024;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn.secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .list{display:flex;flex-direction:column;gap:10px}
+    .ticket{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:10px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .ticket .meta{color:var(--muted);font-size:13px}
+    .small{font-size:13px;color:var(--muted)}
+    .pill{padding:6px 8px;border-radius:999px;font-weight:600;font-size:12px}
+    .pill.open{background:rgba(16,185,129,0.12);color:var(--success)}
+    .pill.closed{background:rgba(239,68,68,0.08);color:var(--danger)}
+    .controls{display:flex;gap:8px}
+    .notice{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+    footer{grid-column:1/-1;margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr; padding:0 12px}
+      aside{position:relative;top:auto}
+    }
+    /* focus styles */
+    input:focus,textarea:focus,select:focus,button:focus{outline:3px solid rgba(6,182,212,0.12);outline-offset:2px}
+
+    .back-home{
+      margin-block:30px;
+      padding-inline: 30px;
+      padding-block: 10px;
+      border-radius: 20px;
+      border:solid 2px #141f38;
+      transition: all 0.5s ease;
+
+    }
+
+    .back-home:hover{
+      background-color: #D4A017;
+      border:none;
+    }
+
+    footer{
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container" role="main"></div>
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">LT</div>
+        <div>
+          <h1>LinkHub</h1>
+          <p class="lead">Unified Contact Appointments and Ticketing Portal</p>
+        </div>
+      </div>
+      <a class = "back-home" href="index.html" style="text-decoration: none; color:white;">HOME</a>
+      <div class="muted">Secure · Fast · Accessible</div>
+      
+    </header>
+
+    <main aria-labelledby="contact-heading">
+      <!-- Contact Section -->
+      <section id="contact" class="card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="muted">Send us a message and we'll get back to you within 24 hours.</p>
+
+        <form id="contactForm" class="grid-2" autocomplete="on" novalidate>
+          <div>
+            <label for="c-name">Full name</label>
+            <input id="c-name" name="name" type="text" required aria-required="true" placeholder="Jane Doe" />
+          </div>
+          <div>
+            <label for="c-email">Email address</label>
+            <input id="c-email" name="email" type="email" required aria-required="true" placeholder="you@example.com" />
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="c-subject">Subject</label>
+            <input id="c-subject" name="subject" type="text" placeholder="How can we help?" />
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" placeholder="Write your message here" required aria-required="true"></textarea>
+          </div>
+
+          <div style="grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end">
+            <button type="submit" class="btn" id="contactSubmit">Send Message</button>
+            <button type="button" class="btn secondary" id="contactReset">Reset</button>
+          </div>
+        </form>
+        <div id="contactStatus" class="small" role="status" aria-live="polite" style="margin-top:10px"></div>
+      </section>
+
+      <!-- Appointments Section -->
+      <section id="appointments" class="card" aria-labelledby="appointments-heading">
+        <h2 id="appointments-heading">Appointments</h2>
+        <p class="muted">Book a consultation or demo. Appointments are saved locally for demo purposes.</p>
+
+        <form id="apptForm" class="grid-2" novalidate>
+          <div>
+            <label for="a-name">Name</label>
+            <input id="a-name" name="name" type="text" required placeholder="Full name" />
+          </div>
+          <div>
+            <label for="a-email">Email</label>
+            <input id="a-email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="a-service">Service</label>
+            <select id="a-service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Product Demo</option>
+              <option>Technical Support</option>
+              <option>Partnership Inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label for="a-date">Date</label>
+            <input id="a-date" name="date" type="date" required />
+          </div>
+          <div>
+            <label for="a-time">Time</label>
+            <input id="a-time" name="time" type="time" required />
+          </div>
+          <div style="grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end">
+            <button type="submit" class="btn">Book Appointment</button>
+            <button type="button" class="btn secondary" id="clearAppts">Clear All</button>
+          </div>
+        </form>
+
+        <div style="margin-top:12px">
+          <h3 style="font-size:14px;margin:0 0 8px 0">Upcoming Appointments</h3>
+          <div id="apptsList" class="list"></div>
+        </div>
+      </section>
+
+      <!-- Ticketing Section -->
+      <section id="ticketing" class="card" aria-labelledby="ticketing-heading">
+        <h2 id="ticketing-heading">Ticketing</h2>
+        <p class="muted">Create a support ticket and track its status.</p>
+
+        <form id="ticketForm" novalidate>
+          <label for="t-name">Name</label>
+          <input id="t-name" name="name" type="text" required placeholder="Your name" />
+          <label for="t-email" style="margin-top:8px">Email</label>
+          <input id="t-email" name="email" type="email" required placeholder="you@example.com" />
+          <label for="t-issue" style="margin-top:8px">Issue summary</label>
+          <input id="t-issue" name="issue" type="text" required placeholder="Short summary" />
+          <label for="t-desc" style="margin-top:8px">Details</label>
+          <textarea id="t-desc" name="details" placeholder="Describe the issue" required></textarea>
+
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+            <button type="submit" class="btn">Create Ticket</button>
+            <button type="button" class="btn secondary" id="clearTickets">Clear Tickets</button>
+          </div>
+        </form>
+
+        <div style="margin-top:12px">
+          <h3 style="font-size:14px;margin:0 0 8px 0">Active Tickets</h3>
+          <div id="ticketsList" class="list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <aside aria-labelledby="help-heading">
+      <h2 id="help-heading">Quick Actions</h2>
+      <div class="notice">
+        <strong>Contact</strong> Use the form to send messages. If JavaScript is disabled the form will open your email client.
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="card">
+        <h3 style="font-size:14px;margin:0 0 8px 0">Support Hours</h3>
+        <p class="small">Mon–Fri 08:00–18:00 GMT</p>
+        <p class="small">Response time typically within 24 hours</p>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="card">
+        <h3 style="font-size:14px;margin:0 0 8px 0">Contact Info</h3>
+        <p class="small"><strong>Email</strong> support@linktree.example</p>
+        <p class="small"><strong>Phone</strong> +233 24 000 0000</p>
+      </div>
+    </aside>
+
+  </div>
+  <footer>
+    <p style="font-size:14px; color:#aaa;">© 2026 LinkHub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Utility helpers
+    const qs = s => document.querySelector(s);
+    const qsa = s => Array.from(document.querySelectorAll(s));
+    const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+
+    // CONTACT FORM
+    const contactForm = qs('#contactForm');
+    const contactStatus = qs('#contactStatus');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = new FormData(contactForm);
+      const name = form.get('name').trim();
+      const email = form.get('email').trim();
+      const message = form.get('message').trim();
+      if(!name || !email || !message){
+        contactStatus.textContent = 'Please complete all required fields.';
+        contactStatus.style.color = 'var(--danger)';
+        return;
+      }
+      // Simulate send: open mailto as fallback
+      const subject = encodeURIComponent(form.get('subject') || 'Contact from Linktree site');
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      // For demo we show a success message and provide mailto link
+      contactStatus.innerHTML = 'Message prepared. <a href="mailto:support@linktree.example?subject=' + subject + '&body=' + body + '" style="color:var(--accent)">Open email client</a>';
+      contactStatus.style.color = 'var(--accent)';
+      contactForm.reset();
+    });
+    qs('#contactReset').addEventListener('click', () => {
+      contactForm.reset();
+      contactStatus.textContent = '';
+    });
+
+    // APPOINTMENTS
+    const apptForm = qs('#apptForm');
+    const apptsKey = 'linktree_appointments_v1';
+    function loadAppts(){
+      const raw = localStorage.getItem(apptsKey);
+      return raw ? JSON.parse(raw) : [];
+    }
+    function saveAppts(list){
+      localStorage.setItem(apptsKey, JSON.stringify(list));
+    }
+    function renderAppts(){
+      const list = loadAppts();
+      const container = qs('#apptsList');
+      container.innerHTML = '';
+      if(list.length === 0){
+        container.innerHTML = '<div class="small muted">No appointments booked</div>';
+        return;
+      }
+      list.sort((a,b)=> new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time));
+      list.forEach(a => {
+        const el = document.createElement('div');
+        el.className = 'ticket';
+        el.innerHTML = `
+          <div>
+            <div style="font-weight:700">${escapeHtml(a.name)} — <span class="small">${escapeHtml(a.service)}</span></div>
+            <div class="meta">${formatDateTime(a.date,a.time)} · ${escapeHtml(a.email)}</div>
+          </div>
+          <div class="controls">
+            <button class="btn secondary" data-id="${a.id}" data-action="cancel">Cancel</button>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+    }
+    apptForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(apptForm);
+      const name = fd.get('name').trim();
+      const email = fd.get('email').trim();
+      const service = fd.get('service');
+      const date = fd.get('date');
+      const time = fd.get('time');
+      if(!name || !email || !service || !date || !time){
+        alert('Please complete all appointment fields.');
+        return;
+      }
+      const appts = loadAppts();
+      const newAppt = { id: uid(), name, email, service, date, time, created: new Date().toISOString() };
+      appts.push(newAppt);
+      saveAppts(appts);
+      renderAppts();
+      apptForm.reset();
+      alert('Appointment booked. Check Upcoming Appointments.');
+    });
+    qs('#apptsList').addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const id = btn.dataset.id;
+      if(btn.dataset.action === 'cancel'){
+        let list = loadAppts();
+        list = list.filter(x => x.id !== id);
+        saveAppts(list);
+        renderAppts();
+      }
+    });
+    qs('#clearAppts').addEventListener('click', () => {
+      if(confirm('Clear all appointments?')) {
+        localStorage.removeItem(apptsKey);
+        renderAppts();
+      }
+    });
+
+    // TICKETING
+    const ticketForm = qs('#ticketForm');
+    const ticketsKey = 'linktree_tickets_v1';
+    function loadTickets(){ return JSON.parse(localStorage.getItem(ticketsKey) || '[]'); }
+    function saveTickets(t){ localStorage.setItem(ticketsKey, JSON.stringify(t)); }
+    function renderTickets(){
+      const list = loadTickets();
+      const container = qs('#ticketsList');
+      container.innerHTML = '';
+      if(list.length === 0){
+        container.innerHTML = '<div class="small muted">No active tickets</div>';
+        return;
+      }
+      list.sort((a,b)=> b.created - a.created);
+      list.forEach(t => {
+        const el = document.createElement('div');
+        el.className = 'ticket';
+        el.innerHTML = `
+          <div>
+            <div style="font-weight:700">${escapeHtml(t.issue)} <span class="small">by ${escapeHtml(t.name)}</span></div>
+            <div class="meta">${new Date(t.created).toLocaleString()} · ${escapeHtml(t.email)}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+            <div class="pill ${t.status === 'open' ? 'open' : 'closed'}">${t.status}</div>
+            <div class="controls">
+              ${t.status === 'open' ? `<button class="btn secondary" data-id="${t.id}" data-action="close">Close</button>` : `<button class="btn secondary" data-id="${t.id}" data-action="reopen">Reopen</button>`}
+              <button class="btn" data-id="${t.id}" data-action="delete">Delete</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+    }
+    ticketForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(ticketForm);
+      const name = fd.get('name').trim();
+      const email = fd.get('email').trim();
+      const issue = fd.get('issue').trim();
+      const details = fd.get('details').trim();
+      if(!name || !email || !issue || !details){
+        alert('Please fill all ticket fields.');
+        return;
+      }
+      const tickets = loadTickets();
+      const t = { id: uid(), name, email, issue, details, status: 'open', created: Date.now() };
+      tickets.push(t);
+      saveTickets(tickets);
+      renderTickets();
+      ticketForm.reset();
+      alert('Ticket created. Our support team will respond.');
+    });
+    qs('#ticketsList').addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const id = btn.dataset.id;
+      const action = btn.dataset.action;
+      let tickets = loadTickets();
+      const idx = tickets.findIndex(x => x.id === id);
+      if(idx === -1) return;
+      if(action === 'close'){ tickets[idx].status = 'closed'; saveTickets(tickets); renderTickets(); }
+      if(action === 'reopen'){ tickets[idx].status = 'open'; saveTickets(tickets); renderTickets(); }
+      if(action === 'delete'){ if(confirm('Delete this ticket?')){ tickets.splice(idx,1); saveTickets(tickets); renderTickets(); } }
+    });
+    qs('#clearTickets').addEventListener('click', () => {
+      if(confirm('Clear all tickets?')){ localStorage.removeItem(ticketsKey); renderTickets(); }
+    });
+
+    // Helpers
+    function formatDateTime(date, time){
+      try{
+        const d = new Date(date + 'T' + time);
+        return d.toLocaleString();
+      }catch(e){ return date + ' ' + time; }
+    }
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    // Initialize
+    renderAppts();
+    renderTickets();
+
+    // Progressive enhancement: if JS disabled, contact form will fallback to mailto
+    (function enableContactFallback(){
+      const form = contactForm;
+      form.setAttribute('action', 'mailto:support@linktree.example');
+      form.setAttribute('method', 'post');
+      form.setAttribute('enctype', 'text/plain');
+    })();
+  </script>
+
+</body>
+</html>
